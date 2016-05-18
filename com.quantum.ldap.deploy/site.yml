@@ -1,0 +1,11 @@
+---
+- hosts: ldapmgt-ci
+  sudo: yes
+  vars:
+    tomcat_password: tomcat
+    max_war_size: 92428800
+  roles:
+    - openjdk-jre7
+    - tomcat7
+    - ldapmgt
+    - check

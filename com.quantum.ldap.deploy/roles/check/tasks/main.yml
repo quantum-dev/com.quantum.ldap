@@ -1,0 +1,8 @@
+---
+    - name: Install curl
+      apt: pkg=curl state=latest
+      
+    - shell: curl http://localhost:8080/
+      register: traces
+      
+    - debug: var=traces
