@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     13 oct. 2015 18:28:26                                                        
+
+     project    
+     description
+                                                      
+     ====================================================================== -->
+<project name="project" default="package">
+    <description>
+            description
+    </description>
+
+    <target name="compile">
+    	<javac srcdir="../com.quantum.ldap/src" destdir="build" debug="off" 
+    		source="1.7" target="1.7" includeantruntime="false">
+	    	<classpath>
+	    		<path location="javax.mail.jar"/>
+	    		<path location="../com.quantum.ldap/lib/commons-codec-1.10/commons-codec-1.10.jar"/>
+	    	</classpath>
+		</javac>
+    </target>
+
+    <target name="package" depends="clean,compile">
+    	<war destfile="package/ldap.war">
+    		<fileset dir="WebContent"/>
+    		<lib dir="../com.quantum.ldap">
+    		  <include name="javax.mail.jar"/>
+    		</lib>
+    		<classes dir="build"/>
+    	</war>
+    </target>
+	
+    <target name="clean">
+		<delete>
+			<fileset dir="build">
+			    <include name="**/*"/>
+			</fileset>
+		</delete>
+            
+    </target>
+
+
+</project>
