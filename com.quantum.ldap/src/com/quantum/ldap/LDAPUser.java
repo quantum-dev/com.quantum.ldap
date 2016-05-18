@@ -32,7 +32,7 @@ public class LDAPUser implements Comparable<LDAPUser> {
 	public String generateEmail() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Bonjour," + NEWLINE_SEPARATOR);
-		builder.append("Un nouveau compte a été créé." + NEWLINE_SEPARATOR);
+		builder.append("Un nouveau compte a Ã©tÃ© crÃ©Ã©." + NEWLINE_SEPARATOR);
 		builder.append("Voici les informations relatives Ã  votre compte:" + NEWLINE_SEPARATOR);
 		builder.append("Login: " + uid + NEWLINE_SEPARATOR);
 		builder.append("Password: " + givenName.toLowerCase() + NEWLINE_SEPARATOR);
