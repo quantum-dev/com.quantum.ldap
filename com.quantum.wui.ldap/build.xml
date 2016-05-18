@@ -11,7 +11,11 @@
             description
     </description>
 
-    <target name="compile">
+    <target name="init">
+    	<mkdir dir="build"/>
+    </target>
+    	
+    <target name="compile" depends="init">
     	<javac srcdir="../com.quantum.ldap/src" destdir="build" debug="off" 
     		source="1.7" target="1.7" includeantruntime="false">
 	    	<classpath>
@@ -37,7 +41,6 @@
 			    <include name="**/*"/>
 			</fileset>
 		</delete>
-            
     </target>
 
 
