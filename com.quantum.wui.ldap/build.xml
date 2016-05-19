@@ -13,6 +13,7 @@
 
     <target name="init">
     	<mkdir dir="build"/>
+    	<mkdir dir="package"/>
     </target>
     	
     <target name="compile" depends="init">
@@ -28,9 +29,12 @@
     <target name="package" depends="clean,compile">
     	<war destfile="package/ldap.war">
     		<fileset dir="WebContent"/>
-    		<lib dir="../com.quantum.ldap">
+    		<lib dir="../com.quantum.ldap/lib">
     		  <include name="javax.mail.jar"/>
     		</lib>
+            <lib dir="../com.quantum.ldap/lib/commons-codec-1.10/">
+                <include name="commons-codec-1.10.jar"/>
+            </lib>
     		<classes dir="build"/>
     	</war>
     </target>
@@ -40,8 +44,9 @@
 			<fileset dir="build">
 			    <include name="**/*"/>
 			</fileset>
+	        <fileset dir="package">
+	                <include name="**/*"/>
+	        </fileset>
 		</delete>
     </target>
-
-
 </project>

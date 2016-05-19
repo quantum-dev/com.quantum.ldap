@@ -20,19 +20,22 @@
 		String usersBaseDN = request.getParameter("usersBaseDN");
 		String projectsBaseDN = request.getParameter("projectsBaseDN");
 		String entitiesBaseDN = request.getParameter("entitiesBaseDN");
-		
+		String message = new String();
 		try {
-			if(!LDAPConnection.checkConfig(configDirectory, 
-					serverURL, 
-					principalUser, 
-					principalPassword, 
-					baseDN,
-					usersBaseDN,
-					projectsBaseDN,
-					entitiesBaseDN
-					)) {
+			boolean check = LDAPConnection.checkConfigWithMessage(configDirectory, 
+                    serverURL, 
+                    principalUser, 
+                    principalPassword, 
+                    baseDN,
+                    usersBaseDN,
+                    projectsBaseDN,
+                    entitiesBaseDN,
+                    message
+                    );
+			if(!check) {
 				%>
-				Something goes wrong with configuration. 
+				Something goes wrong with configuration.
+				Reason: <%= message %>
 				<a href="../login.jsp">Go to login</a> <br/>
 				<%
 			} else {

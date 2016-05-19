@@ -225,7 +225,7 @@ public class LDAPConnection {
 			String baseDN, 
 			String usersBaseDN,
 			String projectsBaseDN,
-			String entitiesBaseDN		
+			String entitiesBaseDN
 			) {
 		Properties prop = new Properties();
 		prop.setProperty("serverURL", serverURL);
@@ -241,6 +241,34 @@ public class LDAPConnection {
 			connection.close();
 			return true;
 		} catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public static boolean checkConfigWithMessage(String configDirectory, 
+			String serverURL, 
+			String principalUser, String principalPassword, 
+			String baseDN, 
+			String usersBaseDN,
+			String projectsBaseDN,
+			String entitiesBaseDN,
+			String message
+			) {
+		Properties prop = new Properties();
+		prop.setProperty("serverURL", serverURL);
+		prop.setProperty("principalUser", principalUser);
+		prop.setProperty("principalPassword", principalPassword);			
+		prop.setProperty("baseDN", baseDN);
+		prop.setProperty("usersBaseDN", usersBaseDN);
+		prop.setProperty("projectsBaseDN", projectsBaseDN);
+		prop.setProperty("entitiesBaseDN", entitiesBaseDN);
+		
+		try {
+			LDAPConnection connection = new LDAPConnection(prop);
+			connection.close();
+			return true;
+		} catch(Exception e) {
+			message += e.toString();
 			return false;
 		}
 	}

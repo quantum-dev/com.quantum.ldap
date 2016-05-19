@@ -80,7 +80,7 @@
 						Base DN 
 					</td>
 					<td>
-						<input id="baseDN" name="baseDN" type="text" value="dc=deveryware,dc=com"/>
+						<input id="baseDN" name="baseDN" type="text" value="dc=domain,dc=com"/>
 					</td>
 				</tr>									
 				<tr> 
@@ -88,7 +88,7 @@
 						Users Base DN
 					</td>
 					<td>
-						<input id="usersBaseDN" name="usersBaseDN" type="text" value="ou=Users,dc=deveryware,dc=com"/>
+						<input id="usersBaseDN" name="usersBaseDN" type="text" value="ou=Users,dc=domain,dc=com"/>
 					</td>
 				</tr>
 				<tr> 
@@ -96,7 +96,7 @@
 						Projects Base DN
 					</td>
 					<td>
-						<input id="projectsBaseDN" name="projectsBaseDN" type="text" value="ou=Projects,dc=deveryware,dc=com"/>
+						<input id="projectsBaseDN" name="projectsBaseDN" type="text" value="ou=Projects,dc=domain,dc=com"/>
 					</td>
 				</tr>
 				<tr> 
@@ -104,7 +104,7 @@
 						Entities Base DN
 					</td>
 					<td>
-						<input id="entitiesBaseDN" name="entitiesBaseDN" type="text" value="ou=Entities,dc=deveryware,dc=com"/>
+						<input id="entitiesBaseDN" name="entitiesBaseDN" type="text" value="ou=Entities,dc=domain,dc=com"/>
 					</td>
 				</tr>								
 				<tr> 

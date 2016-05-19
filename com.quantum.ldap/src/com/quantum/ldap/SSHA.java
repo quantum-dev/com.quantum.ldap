@@ -25,7 +25,7 @@ public class SSHA {
 	
 	public static SSHA getInstance(){
 		return inst;
-	}
+	} 
 
 	/**
 	 * @param shaEnc
