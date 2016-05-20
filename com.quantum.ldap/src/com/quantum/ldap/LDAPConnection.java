@@ -6,17 +6,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.attribute.PosixFilePermission;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Properties;
-import java.util.Set;
 
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
@@ -45,6 +40,8 @@ import javax.naming.ldap.LdapName;
  */
 public class LDAPConnection {
 
+	public static final String DEFAULT_CONFIG_DIR = "/var/lib/ldap-mgt";
+	
 	/**
 	 * The LDAP Context.
 	 */
@@ -121,19 +118,27 @@ public class LDAPConnection {
 	 * @throws IOException
 	 */
 	public LDAPConnection() throws NamingException, IOException {
-		connect(new File(configFileName));
+		connect(new File(DEFAULT_CONFIG_DIR, configFileName));
 	}
 	
 	/**
 	 * Default constructor.
-	 * Automatic connection by calling {@link #connect(File)}
+	 * Automatic connection with properties
+	 * @param configDirectory
 	 * @throws NamingException
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public LDAPConnection(String configDirectory) throws NamingException, IOException {
-		connect(new File(configDirectory + "/" + configFileName));
+		connect(new File(configDirectory, configFileName));
 	}
 	
+	/**
+	 * Default constructor.
+	 * Automatic connection with properties
+	 * @param configDirectory
+	 * @throws NamingException
+	 * @throws IOException
+	 */
 	public LDAPConnection(File configDirectory) throws NamingException, IOException {
 		connect(new File(configDirectory, configFileName));
 	}

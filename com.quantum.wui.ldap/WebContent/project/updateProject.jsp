@@ -55,7 +55,7 @@
 			String cn = request.getParameter("cn");
 		%>
 	
-		<% String configDirectory = session.getServletContext().getRealPath("/");
+		<% String configDirectory = LDAPConnection.DEFAULT_CONFIG_DIR; // session.getServletContext().getRealPath("/");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 			LDAPProject project = connection.retrieveProjectByCn(cn);

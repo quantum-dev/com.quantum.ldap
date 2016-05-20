@@ -51,7 +51,7 @@
 	<body>
 		<%  
 		if(session.getAttribute("session")!=null) { 
-			String configDirectory = session.getServletContext().getRealPath("/");
+			String configDirectory = LDAPConnection.DEFAULT_CONFIG_DIR; // session.getServletContext().getRealPath("/");
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 
 			Attributes attributes = connection.fetchUserByUsername(request.getParameter("cn"));

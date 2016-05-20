@@ -36,7 +36,7 @@
 	<br/> <img src="images/image-tree.png" alt="Tree" width="100" height="100"/> </br>
 	
 	<%
-		String configDirectory = session.getServletContext().getRealPath("/");
+		String configDirectory = LDAPConnection.DEFAULT_CONFIG_DIR; // session.getServletContext().getRealPath("/");
 		if(LDAPConnection.isDebug()) {
 			out.print("Configuration directory is located in:" + configDirectory);		
 		}
