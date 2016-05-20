@@ -37,10 +37,11 @@
 		<h2>Export entities</h2>
 		
 		<% 
-		String configDirectory = LDAPConnection.DEFAULT_CONFIG_DIR; // session.getServletContext().getRealPath("/");
+		String configDirectory = LDAPConnection.DEFAULT_CONFIG_DIR;
+		String exportDir = session.getServletContext().getRealPath("/");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
-			File exportFile = new File(configDirectory + File.separator + "export.csv");
+			File exportFile = new File(exportDir + File.separator + "export.csv");
 			System.out.println(exportFile);
 			connection.exportEntities(exportFile);
 			connection.close();
