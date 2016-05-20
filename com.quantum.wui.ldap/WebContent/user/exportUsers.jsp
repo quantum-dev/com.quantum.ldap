@@ -38,9 +38,10 @@
 		
 		<% 
 		String configDirectory = LDAPConnection.DEFAULT_CONFIG_DIR; // session.getServletContext().getRealPath("/");
+		String exportDir = session.getServletContext().getRealPath("/");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
-			File exportFile = new File(configDirectory + File.separator + "export.csv");
+			File exportFile = new File(exportDir + File.separator + "export.csv");
 			System.out.println(exportFile);
 			connection.exportUsers(exportFile);
 			connection.close();
