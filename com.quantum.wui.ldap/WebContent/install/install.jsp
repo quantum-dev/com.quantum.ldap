@@ -10,7 +10,7 @@
 </head>
 <body>
 	<% 	
-	String configDirectory = session.getServletContext().getRealPath("..");
+	String configDirectory = session.getServletContext().getRealPath("/");
 	
 	if(!LDAPConnection.isConfigFilePresent(configDirectory)) {
 		String serverURL = request.getParameter("serverURL");

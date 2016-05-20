@@ -26,7 +26,7 @@
 		<h2>Entities</h2>
 		
 		<% 	
-		String configDirectory = session.getServletContext().getRealPath("..");
+		String configDirectory = session.getServletContext().getRealPath("/");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 			List<LDAPEntity> entities = connection.retrieveEntities();

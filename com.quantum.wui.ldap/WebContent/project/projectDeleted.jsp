@@ -15,7 +15,7 @@
 		<a href='../mainPanel.jsp'> Back </a> <br/>
 	
 		<% 
-		String configDirectory = session.getServletContext().getRealPath("..");
+		String configDirectory = session.getServletContext().getRealPath("/");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 			try {

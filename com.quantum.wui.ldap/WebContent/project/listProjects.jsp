@@ -25,7 +25,7 @@
 		<h2>Projects</h2>
 		
 		<% 	
-		String configDirectory = session.getServletContext().getRealPath("..");
+		String configDirectory = session.getServletContext().getRealPath("/");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 			List<LDAPProject> projects = connection.retrieveProjects();
