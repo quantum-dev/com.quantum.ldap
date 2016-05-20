@@ -10,7 +10,7 @@
 </head>
 <body>
 	<% 
-		String configDirectory = session.getServletContext().getRealPath("/");
+		String configDirectory = session.getServletContext().getRealPath("..");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 			// out.println(connection);

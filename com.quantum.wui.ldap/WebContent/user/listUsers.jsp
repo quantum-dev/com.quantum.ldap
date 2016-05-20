@@ -24,7 +24,7 @@
 		<h2>Users</h2>
 		
 		<%
-		String configDirectory = session.getServletContext().getRealPath("/");
+		String configDirectory = session.getServletContext().getRealPath("..");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 			List<LDAPUser> users = connection.retrieveUsers();

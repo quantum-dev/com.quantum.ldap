@@ -18,7 +18,7 @@
 			</tr>
 		</table>
 		<%
-		String configDirectory = session.getServletContext().getRealPath("/");
+		String configDirectory = session.getServletContext().getRealPath("..");
 		try {
 			LDAPConnection connection = new LDAPConnection(configDirectory);
 			try {
