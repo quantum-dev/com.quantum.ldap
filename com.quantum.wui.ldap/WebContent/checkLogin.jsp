@@ -23,7 +23,7 @@
 				<jsp:include page="mainPanel.jsp"></jsp:include>
 				<%
 			} else {  
-				out.print("Sorry, email or password error");  
+				out.print("Sorry, login or password error");  
 	%>  
 				<jsp:include page="login.jsp"></jsp:include>
 	<%

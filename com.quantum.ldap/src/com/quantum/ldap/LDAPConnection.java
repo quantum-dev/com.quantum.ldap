@@ -360,6 +360,10 @@ public class LDAPConnection {
 		
 		try {
 			createUser("admin", "Administrator", "Administrator", "Administrator", "admin", "Administrator");
+			LDAPUser user = retrieveUserByUid("admin");
+			List<LDAPUser> users = new ArrayList<LDAPUser>();
+			users.add(user);
+			createEntity("Administrators", users);
 		} catch(Exception e) {
 			
 		}
