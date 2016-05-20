@@ -20,3 +20,4 @@
     - shell: ant chdir=/var/lib/tomcat7/webapps/com.quantum.ldap/com.quantum.wui.ldap/ 
     
     - shell: cp /var/lib/tomcat7/webapps/com.quantum.ldap/com.quantum.wui.ldap/package/ldap.war /var/lib/tomcat7/webapps/ldap.war
+    
