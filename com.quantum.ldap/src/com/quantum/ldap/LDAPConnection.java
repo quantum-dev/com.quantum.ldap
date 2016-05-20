@@ -40,7 +40,7 @@ import javax.naming.ldap.LdapName;
  */
 public class LDAPConnection {
 
-	public static final String DEFAULT_CONFIG_DIR = "/var/lib/ldap-mgt";
+	public static final String DEFAULT_CONFIG_DIR = "/var/lib/ldap-mgt/";
 	
 	/**
 	 * The LDAP Context.
