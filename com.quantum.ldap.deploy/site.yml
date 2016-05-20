@@ -7,5 +7,5 @@
   roles:
     - openjdk-jre7
     - tomcat7
-    - ldapmgt
+    - ldapmgt-git
     - check

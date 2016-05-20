@@ -1,9 +1,0 @@
----
-    # - copy: src=ldap.war dest=/home/{{user}}/ldap.war mode=0644
-
-    # - name: Deploy application
-    #  shell: wget --http-user=tomcat --http-password=tomcat 
-    #        "http://localhost:8080/manager/text/deploy?war=file:/home/{{user}}/ldap.war&path=/ldap" -O -
-    #  register: traces
-    
-    - copy: src=ldap.war dest=/var/lib/tomcat7/webapps/ldap.war mode=0644
