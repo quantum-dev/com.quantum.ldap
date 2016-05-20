@@ -18,7 +18,7 @@
     	
     <target name="compile" depends="init">
     	<javac srcdir="../com.quantum.ldap/src" destdir="build" debug="off" 
-    		source="1.7" target="1.7" includeantruntime="false">
+    		source="1.7" target="1.7" includeantruntime="false" encoding="UTF-8">
 	    	<classpath>
 	    		<path location="javax.mail.jar"/>
 	    		<path location="../com.quantum.ldap/lib/commons-codec-1.10/commons-codec-1.10.jar"/>
